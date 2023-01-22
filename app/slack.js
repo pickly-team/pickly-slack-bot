@@ -64,7 +64,7 @@ async function sendReminderPullRequestNotification(pr) {
 		`[${getLinkText(
 			"pickly-backend",
 			html_url,
-		)}] ${diffDate}일이 지난 PR이 있습니다🤕 소중한 코드리뷰 부탁드려요~ 🙏 \n<${url}|${title}> by ${getCmiMemberNickname(
+		)}] ${diffDate}일이 지난 PR이 있습니다🤕 \n<${url}|${title}> by ${getPicklyMember(
 			loginId,
 		)}`,
 		PICKLY_CHANNEL,
