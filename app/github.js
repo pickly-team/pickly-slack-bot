@@ -3,9 +3,9 @@ const { sendReminderPullRequestNotification } = require("./slack");
 
 // "https://api.github.com/repos/pickly-team/pickly-backend/pulls",
 
-let prList = [];
+const prList = [];
+const notiPrList = [];
 const fetchGithub = async () => {
-    prList = [];
     try {
       const repos = await axios.get(
         "https://api.github.com/repos/pickly-team/pickly-slack-bot/pulls",
@@ -27,7 +27,6 @@ const fetchGithub = async () => {
   };
   
   const scheduleGithub = async () => {
-    const notiPrList = [];
     await fetchGithub();
     prList.forEach((pr) => {
       const diffDate = Math.floor(

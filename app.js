@@ -3,9 +3,10 @@ const cookieParser = require('cookie-parser');
 const logger = require('morgan');
 const schedule = require('node-schedule');
 
+require("dotenv").config();
+
 const indexRouter = require('./routes/index');
 const scheduleGithub = require('./app/github');
-require("dotenv").config();
 
 const app = express();
 
